@@ -18,23 +18,24 @@ class Ideone
 			arr[i]=s.nextInt();
 		}
 		int r=s.nextInt();
-		int count=0;
+		int count=0,num=0;
 		int[] counted=new int[total];
 		for(int i=0;i<total;i++){
-			count=1;
+			count=0;
 			if(!Arrays.asList(counted).contains(arr[i]))
 			{
-			for(int j=i+1;j<total;j++){
+			for(int j=0;j<total;j++){
 				if(arr[i]==arr[j]){
-					count++;
+					count=count+1;
 				}
 				}
-				counted[i]=arr[i];
+				counted[num++]=arr[i];
 			}
-		}
-        if(count==r){
+			if(count==r){
 				System.out.println(arr[i]);
 			}
+			
+		}
 		
 	}
 }
