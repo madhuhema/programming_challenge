@@ -22,20 +22,21 @@ class Ideone
 		int[] counted=new int[total];
 		for(int i=0;i<total;i++){
 			count=0;
-			if(!Arrays.asList(counted).contains(arr[i]))
+			int val=arr[i];
+			if(!(Arrays.stream(counted)
+				.anyMatch(x -> x == val)))
 			{
+			counted[num++]=arr[i];
 			for(int j=0;j<total;j++){
 				if(arr[i]==arr[j]){
 					count=count+1;
 				}
 				}
-				counted[num++]=arr[i];
 			}
 			if(count==r){
 				System.out.println(arr[i]);
 			}
 			
 		}
-		
 	}
 }
